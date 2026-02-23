@@ -5,14 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="
+        https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
+        " rel="stylesheet">
+    <script src="./main.js" type="module"></script>
+
 </head>
 
 <body>
     <div class="app">
-        <nav class="nav">
 
-        </nav>
+
         <main class="main-container">
+            <div class="content">
+                <section id="current">
+                    <!-- city name, temp, condition -->
+                </section>
+
+                <div class="search-bar">
+                    <button class="toggle-unit">&deg;<span class="temp-unit">F</span></button>
+                    <form id="myWeatherForm">
+                        <div class="input-container">
+                            <i class="fas fa-location-dot icon"></i>
+                            <input type="search" name="search" id="search" placeholder="lagos">
+                        </div>
+                        <button class="searchBtn">Search</button>
+                    </form>
+                </div>
+            </div>
+
+            <section id="details">
+                <!-- humidity, wind, UV index, etc. -->
+            </section>
+            <section id="forecast">
+
+                <!--  7-day or hourly cards -->
+            </section>
 
         </main>
     </div>
