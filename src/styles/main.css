@@ -63,6 +63,7 @@ ul {
   outline: none;
   transition: border-color 0.2s;
   max-width: 200px;
+  flex: 1 2 auto;
 }
 
 #search:focus { border-color: var(--accent); }
@@ -150,11 +151,7 @@ ul {
   font-size: 1rem;
   margin-top: 4px;
 }
-@media (max-width: 480px) {
-  .content { padding: 1rem; flex-wrap: wrap; gap: 10px; }
-  .main-container { margin: 1rem auto; }
-  .current-card h2 { font-size: 1.4rem; }
-}
+
 
 
 .loader {
@@ -196,3 +193,50 @@ ul {
 }
 
 .hidden { display: none; }
+
+
+
+
+@media (max-width: 480px) {
+   .content .search-bar {
+    position: static;
+    width: 100%;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    right: auto;
+    top: auto;
+  }
+
+  #myWeatherForm {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .input-container {
+    width: 100%;
+  }
+
+  #search {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .searchBtn, .toggle-unit {
+    width: 100%;
+  }
+
+  .content { 
+    padding: 1rem; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+  }
+  
+  .main-container { 
+    margin: 1rem auto; 
+  }
+  
+  .current-card h2 { 
+    font-size: 1.4rem; 
+  }
+}
