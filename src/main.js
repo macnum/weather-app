@@ -11,17 +11,29 @@ const weatherBaseURL =
 	'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/';
 const weatherApiKey = 'UBGBWDQ2ZLTQ82XEXWCNB7QC9';
 
+const mainContainer = document.querySelector('.main-container');
+const loader = document.querySelector('.loader');
+
 async function weatherApp(location, endDate) {
 	console.log('requestData');
+
 	const myRequest = checkUrlParameters(location, endDate);
 
 	if (!myRequest) return;
 
 	const data = await getData(myRequest);
+	hideLoader();
 	DOM.renderData(data);
+}
 
-	console.log(data);
-	console.log(data.address);
+function showLoader() {
+	loader.classList.remove('hidden');
+
+	mainContainer.classList.add('hidden');
+}
+function hideLoader() {
+	loader.classList.add('hidden');
+	mainContainer.classList.remove('hidden');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -50,6 +62,7 @@ function checkUrlParameters(location, endDate) {
 
 async function getData(url) {
 	try {
+		showLoader();
 		const response = await fetch(url, {
 			method: 'GET',
 		});
@@ -62,6 +75,9 @@ async function getData(url) {
 	} catch (error) {
 		console.error(error.message);
 	}
+	// finally {
+	// 	hideLoader();
+	// }
 }
 
 toggleBtn.addEventListener('click', (e) => {

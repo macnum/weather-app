@@ -26,9 +26,6 @@ ul {
   position: relative;
 }
 
-
-
-
 .content .search-bar {
   display: flex;
   align-items: center;
@@ -86,6 +83,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  position: relative;
 }
 
 .current-card {
@@ -157,3 +155,43 @@ ul {
   .main-container { margin: 1rem auto; }
   .current-card h2 { font-size: 1.4rem; }
 }
+
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem;
+  color: var(--text-muted);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+
+
+}
+
+
+
+
+.spinner-text {
+  font-size: 0.9rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.hidden { display: none; }
