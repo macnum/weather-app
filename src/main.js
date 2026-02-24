@@ -74,10 +74,9 @@ async function getData(url) {
 		return result;
 	} catch (error) {
 		console.error(error.message);
+	} finally {
+		hideLoader();
 	}
-	// finally {
-	// 	hideLoader();
-	// }
 }
 
 toggleBtn.addEventListener('click', (e) => {
